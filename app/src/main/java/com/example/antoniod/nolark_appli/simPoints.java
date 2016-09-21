@@ -11,5 +11,10 @@ public class simPoints extends AppCompatActivity {
         setContentView(R.layout.activity_sim_points);
     }
 
-    
+    public int depassVitesse(int vitesse, int vitesseLimite){
+        int vitesseEnTrop = vitesse - vitesseLimite;
+        return vitesseEnTrop;
+    }
+
+
 }
