@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class simPoints extends AppCompatActivity {
+    private int vLimite;
+    private int vRelevee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,9 +13,22 @@ public class simPoints extends AppCompatActivity {
         setContentView(R.layout.activity_sim_points);
     }
 
-    public int depassVitesse(int vitesse, int vitesseLimite){
-        int vitesseEnTrop = vitesse - vitesseLimite;
-        return vitesseEnTrop;
+    public simPoints(int vLimite, int vRelevee){
+        this.vLimite=vLimite;
+        this.vRelevee=vRelevee;
+    }
+
+    public int getvLimite(){
+        return vLimite;
+    }
+
+    public int getvRelevee(){
+        return vRelevee;
+    }
+
+    public int getVitesseEnTrop(int vLimite, int vRelevee){
+        int ecart = vRelevee - vLimite;
+        return ecart;
     }
 
 
