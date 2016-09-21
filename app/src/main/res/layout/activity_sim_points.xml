@@ -21,7 +21,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Sanction"
             android:id="@+id/txtSanction"
-            android:layout_above="@+id/txtAmende"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/txtAmende"
             android:layout_alignEnd="@+id/txtAmende" />
 
         <TextView
@@ -30,9 +31,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Amendes"
             android:id="@+id/txtAmende"
-            android:layout_marginBottom="29dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/btnCalcul"
+            android:layout_alignEnd="@+id/btnCalcul"
+            android:layout_marginTop="96dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,9 +79,8 @@
             android:layout_height="wrap_content"
             android:text="Calculer"
             android:id="@+id/btnCalcul"
-            android:layout_above="@+id/txtSanction"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="67dp" />
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/txtVLimite" />
 
     </RelativeLayout>
 </RelativeLayout>

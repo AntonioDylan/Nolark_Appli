@@ -10,6 +10,8 @@ import android.widget.TextView;
 import java.util.function.ToIntFunction;
 
 public class simPoints extends AppCompatActivity {
+    final TextView txtSanction = (TextView) findViewById(R.id.txtSanction);
+    final TextView txtAmende = (TextView) findViewById(R.id.txtAmende);
     private int vLimite;
     private int vRelevee;
 
@@ -31,6 +33,8 @@ public class simPoints extends AppCompatActivity {
         final EditText nbVLimite = (EditText) findViewById(R.id.nbVLimite);
         this.vRelevee=Integer.parseInt(nbVRelevee.getText().toString());
         this.vLimite=Integer.parseInt(nbVLimite.getText().toString());
+
+
     }
 
     public int getVLimite(){
@@ -52,29 +56,32 @@ public class simPoints extends AppCompatActivity {
         int ecart = getVitesseEnTrop(vLimite, vRelevee);
         String amende;
         String sanction;
-        final TextView txtSanction = (TextView) findViewById(R.id.txtSanction);
-        final TextView txtAmende = (TextView) findViewById(R.id.txtAmende);
-        if(ecart < 20){
-            sanction = "1 point" ;
-            if (vLimite > 50)
-                amende= "45 €/68 €/180 €";
-            else
-                amende="90 €/135 €/375 €";
+        if(ecart < 20) {
+            sanction = "1 point";
+            if (vLimite > 50){amende = "45 €/68 €/180 €";}
+            else {amende = "90 €/135 €/375 €";}
+            txtAmende.setText("Amende minorée/Forfaitaire/Majorée: " + amende);
+            txtSanction.setText("Retrait :" + sanction);
         }
-        else if(ecart >= 20 && ecart < 50){
-            amende="90 €/135 €/375 €";
-            if (ecart < 30)
-                sanction="2 points";
-            else if(ecart < 40)
-                sanction="3 points + 3 ans de suspension";
-            else
-                sanction = "4 points + 3 ans de suspension";
+        else if (ecart >= 20 && ecart < 50) {
+            amende = "90 €/135 €/375 €";
+            if (ecart < 30) {sanction = "2 points";}
+            else if (ecart < 40) {sanction = "3 points + 3 ans de suspension";}
+            else {sanction = "4 points + 3 ans de suspension";}
+            txtAmende.setText("Amende minorée/Forfaitaire/Majorée: " + amende);
+            txtSanction.setText("Retrait :" + sanction);
         }
+
+        else if (ecart > 50){
+            amende = "1500 €";
+            sanction = "6 points + 3 ans de suspension + confisaction véhicule + stage sécurité";
+            txtAmende.setText("Amende minorée/Forfaitaire/Majorée: " + amende);
+            txtSanction.setText("Retrait :" + sanction);
+        }
+
         else{
-            amende="1500 €";
-            sanction="6 points + 3 ans de suspension + confisaction véhicule + stage sécurité";
+            txtAmende.setText("Vitesse respectée!");
+            txtSanction.setText("Pas de sanctions!");
         }
-        txtAmende.setText("Amende minorée/Forfaitaire/Majorée: " + amende);
-        txtSanction.setText("Retrait :" + sanction);
     }
 }
