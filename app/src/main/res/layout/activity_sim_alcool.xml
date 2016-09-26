@@ -12,31 +12,72 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/txtVerres"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="171dp" />
+        android:id="@+id/nbVerres"
+        android:inputType="number"
+        android:layout_marginBottom="126dp"
+        android:layout_above="@+id/txtAlcool"
+        android:layout_alignStart="@+id/nbPoids" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
         android:ems="10"
-        android:id="@+id/txtPoids"
+        android:id="@+id/nbPoids"
+        android:inputType="number"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp" />
+        android:layout_marginTop="39dp" />
 
-    <RadioButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Votre sexe"
-        android:id="@+id/rbSexe"
-        android:layout_below="@+id/txtPoids"
+        android:text="Alcoolémie : 0.0 g/l de sang"
+        android:id="@+id/txtAlcool"
+        android:layout_marginBottom="89dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:id="@+id/RG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbHomme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homme" />
+
+        <RadioButton
+            android:id="@+id/rbFemme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femme" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSanction"
+        android:layout_alignTop="@+id/txtAlcool"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:checked="false" />
+        android:layout_marginTop="29dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculer"
+        android:id="@+id/btnCalcul"
+        android:layout_above="@+id/txtAlcool"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAmende"
+        android:layout_below="@+id/txtSanction"
+        android:layout_alignStart="@+id/txtSanction" />
 
 </RelativeLayout>
