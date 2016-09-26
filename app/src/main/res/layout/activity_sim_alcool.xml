@@ -41,7 +41,26 @@
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nbVerres"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:id="@+id/rbHomme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homme"
+            android:layout_below="@+id/nbPoids"
+            android:layout_alignStart="@+id/btnCalcul"
+            android:layout_marginTop="45dp" />
+
+        <RadioButton
+            android:id="@+id/rbFemme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femme"
+            android:layout_below="@+id/rbHomme"
+            android:layout_alignStart="@+id/rbHomme" />
+
 
     </RadioGroup>
 
@@ -69,21 +88,6 @@
         android:layout_below="@+id/txtSanction"
         android:layout_alignStart="@+id/txtSanction" />
 
-    <RadioButton
-        android:id="@+id/rbHomme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Homme"
-        android:layout_below="@+id/nbPoids"
-        android:layout_alignStart="@+id/btnCalcul"
-        android:layout_marginTop="45dp" />
 
-    <RadioButton
-        android:id="@+id/rbFemme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Femme"
-        android:layout_below="@+id/rbHomme"
-        android:layout_alignStart="@+id/rbHomme" />
 
 </RelativeLayout>
