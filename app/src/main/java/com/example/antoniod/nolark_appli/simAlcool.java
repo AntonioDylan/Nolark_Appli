@@ -23,7 +23,7 @@ public class simAlcool extends AppCompatActivity {
     private double coefDiffuF = 0.6;
     private double txAlcool;
     private int vVerres;
-    private char sexe;
+    private String sexe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,33 +41,34 @@ public class simAlcool extends AppCompatActivity {
     public simAlcool(){
         final EditText nbVerres = (EditText) findViewById(R.id.nbVerres);
         final EditText nbPoids = (EditText) findViewById(R.id.nbPoids);
-        final RadioGroup RG = (RadioGroup) findViewById(R.id.RG);
+        final RadioGroup RG = (RadioGroup) findViewById(R.id.radioGroup);
         this.vVerres=Integer.parseInt(nbVerres.getText().toString());
         this.vPoids=Integer.parseInt(nbPoids.getText().toString());
 
     }
 
 
-    /*public char getSexe(){
-        if( RG.getSelection() == rbHomme) {
-            char sexe ='H';
-        } else if (RG.getSelection() == rbFemme) {
-            char sexe ='F';
-        }
-        return sexe;
-    }*/
 
-    public double getAlcoolemie(int vVerres, double vPoids, char sexe, int uniteAlcool, double coefDiffuF, double coefDiffuH) {
-       if (sexe == 'H') {
-            txAlcool = (vVerres * uniteAlcool) / (vPoids * 0.6);
-        } else if (sexe == 'F') {
+    public String getSexe(){
+        final RadioGroup radioGroup= (RadioGroup) findViewById(R.id.radioGroup);
+        final RadioButton radioGroup_checked = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+        String sexe =(String) radioGroup_checked.getText();
+
+
+        return sexe;
+    }
+
+    public double getAlcoolemie(int vVerres, double vPoids, String sexe, int uniteAlcool, double coefDiffuF, double coefDiffuH) {
+       if (sexe == "Homme") {
+            txAlcool = (vVerres * uniteAlcool) / (vPoids * coefDiffuH);
+        } else if (sexe == "Femme") {
             txAlcool = (vVerres * uniteAlcool) / (vPoids * coefDiffuF);
         }
         return txAlcool;
     }
 
     public void amende(){
-        sexe='H';
+        sexe=getSexe();
         double txAlcool = getAlcoolemie(vVerres, vPoids, sexe, uniteAlcool, coefDiffuF, coefDiffuH);
         String amende;
         String sanction;
