@@ -10,8 +10,38 @@
     tools:context="com.example.antoniod.nolark_appli.Accueil"
     android:id="@+id/prevention">
 
-    <ImageView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/automobiliste_et_motard"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/automobiliste_et_motard"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Le casque n'est pas seulement une obligation légale, c'est aussi une obligation vitale. C'est pourquoi il faut correctement choisir son casque en fonction de votre besoin, trouvez ici des milliers de modèles, pour tous les goûts et de toutes les tailles.
+               Nous sommes là pour votre sécurité."
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:id="@+id/textView"
+            android:layout_weight="1.40" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/secu" />
+
+    </LinearLayout>
 </RelativeLayout>
