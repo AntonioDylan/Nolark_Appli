@@ -7,11 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.function.ToIntFunction;
-
 public class simPoints extends AppCompatActivity {
-    final TextView txtSanction = (TextView) findViewById(R.id.txtSanction);
-    final TextView txtAmende = (TextView) findViewById(R.id.txtAmende);
     private int vLimite;
     private int vRelevee;
 
@@ -20,7 +16,7 @@ public class simPoints extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sim_points);
         final Button btnCalcul = (Button) findViewById(R.id.btnCalcul);
-        btnCalcul.setOnClickListener(new View.OnClickListener() {
+        btnCalcul.setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 amende();
@@ -54,6 +50,8 @@ public class simPoints extends AppCompatActivity {
         int vLimite = getVLimite();
         int vRelevee = getVRelevee();
         int ecart = getVitesseEnTrop(vLimite, vRelevee);
+        TextView txtAmende = (TextView) findViewById(R.id.txtAmende);
+        TextView txtSanction = (TextView) findViewById(R.id.txtSanction);
         String amende;
         String sanction;
         if(ecart < 20) {
