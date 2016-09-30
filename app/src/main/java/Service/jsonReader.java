@@ -15,7 +15,7 @@ import Entity.Casque;
 
 public class jsonReader {
 
-    public static ArrayList<Casque> setPersonnes() {
+    public static ArrayList<Casque> setCasques() {
 
         ArrayList<Casque> casques = new ArrayList<Casque>();
 
@@ -40,7 +40,7 @@ public class jsonReader {
             /////////////////////////
 
 
-            //Parse des valeurs provenant de l'API en JSON
+            //Parse des valeurs provenant de l'API en JSONs
 
 
             // On récupère le JSON complet

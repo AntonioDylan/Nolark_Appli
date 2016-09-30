@@ -36,4 +36,19 @@ public class Panier {
     public void setListPanier(ArrayList<Casque> listPanier) {
         this.listPanier = listPanier;
     }
+
+    public void addCasque(Casque p_Casque)
+    {
+        this.listPanier.add(p_Casque);
+        prixTotal += p_Casque.getPrix();
+    }
+
+    public void suppCasque(int p_Id,Casque p_Casque)
+    {
+        this.listPanier.remove(p_Id);
+        prixTotal -= p_Casque.getPrix();
+    }
+
+
 }
+
