@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#0075BD">
 
 
     <ProgressBar
@@ -25,5 +26,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp" />
+    <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src ="@drawable/img_splash"
+        android:layout_below="@+id/progressBar"
+        android:layout_alignStart="@+id/progressBar" />
 
 </RelativeLayout>
